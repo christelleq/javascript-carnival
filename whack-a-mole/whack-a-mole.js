@@ -10,8 +10,10 @@ let cells = document.getElementsByTagName('td')
 
 // DONE! A function to randomly select which cell should show the mole.
 
+let cellNumber
+
 function whichCell() {
-  let cellNumber = Math.floor(Math.random() * 25)
+  cellNumber = Math.floor(Math.random() * 25)
   console.log(cellNumber)
   return cellNumber
 }
@@ -26,5 +28,3 @@ function showMole(cellNumber) {
   cells[cellNumber].appendChild(image)
   console.log(cellNumber)
 }
-
-showMole(whichCell())
