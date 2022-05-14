@@ -27,11 +27,13 @@ function showMole(cellNumber) {
   image.setAttribute('height', 75)
   cells[cellNumber].appendChild(image)
   console.log(cellNumber)
+  cells[cellNumber].addEventListener('click', whackedMole)
 }
 
 showMole(whichCell())
 
-cells[cellNumber].onclick = function whackedMole() {
+function whackedMole() {
   console.log(cellNumber)
   cells[cellNumber].innerHTML = ''
+  showMole(whichCell())
 }
