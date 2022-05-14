@@ -11,7 +11,7 @@ let cells = document.getElementsByTagName('td')
 // DONE! A function to randomly select which cell should show the mole.
 
 function whichCell() {
-  let cellNumber = Math.floor(Math.random() * 26)
+  let cellNumber = Math.floor(Math.random() * 25)
   return cellNumber
 }
 
