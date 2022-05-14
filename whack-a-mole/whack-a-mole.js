@@ -12,7 +12,19 @@ let cells = document.getElementsByTagName('td')
 
 function whichCell() {
   let cellNumber = Math.floor(Math.random() * 25)
+  console.log(cellNumber)
   return cellNumber
 }
 
 // A way to show a mole in the chosen cell.
+function showMole(cellNumber) {
+  const image = document.createElement('img')
+  image.setAttribute('src', './mole.png')
+  image.setAttribute('id', 'mole')
+  image.setAttribute('height', 75)
+  image.setAttribute('height', 75)
+  cells[cellNumber].appendChild(image)
+  console.log(cellNumber)
+}
+
+showMole(whichCell())
