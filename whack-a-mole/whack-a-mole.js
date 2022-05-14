@@ -8,5 +8,11 @@ console.log('Whack-a-Mole!')
 
 let cells = document.getElementsByTagName('td')
 
-// A function to randomly select which cell should show the mole.
+// DONE! A function to randomly select which cell should show the mole.
+
+function whichCell() {
+  let cellNumber = Math.floor(Math.random() * 26)
+  return cellNumber
+}
+
 // A way to show a mole in the chosen cell.
