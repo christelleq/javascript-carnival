@@ -18,13 +18,10 @@ function unicornClicked(e) {
 
   if (image.src.match('./images/unicorn-0.png')) {
     image.src = './images/unicorn-1.png'
-    console.log('1')
   } else if (image.src.match('./images/unicorn-1.png')) {
     image.src = './images/unicorn-2.png'
-    console.log('unicorn 2')
   } else if (image.src.match('./images/unicorn-2.png')) {
     image.src = './images/unicorn-3.png'
-    console.log('unicorn 3')
   } else if (image.src.match('./images/unicorn-3.png')) {
     alert(`Unicorn Number ${image.id} says thank you!`)
   }
