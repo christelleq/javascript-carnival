@@ -18,7 +18,7 @@ function whichCell() {
   return cellNumber
 }
 
-// A way to show a mole in the chosen cell.
+// DONE! A way to show a mole in the chosen cell.
 function showMole(cellNumber) {
   const image = document.createElement('img')
   image.setAttribute('src', './mole.png')
