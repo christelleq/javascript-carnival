@@ -28,3 +28,10 @@ function showMole(cellNumber) {
   cells[cellNumber].appendChild(image)
   console.log(cellNumber)
 }
+
+showMole(whichCell())
+
+cells[cellNumber].onclick = function whackedMole() {
+  console.log(cellNumber)
+  cells[cellNumber].innerHTML = ''
+}
