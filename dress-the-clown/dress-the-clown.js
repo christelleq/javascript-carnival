@@ -12,18 +12,10 @@ function changeClownHead() {
   document.addEventListener('keydown', function (e) {
     switch (e.key) {
       case 'ArrowRight':
-        if (headIndex >= 5) {
-          headIndex = 0
-        } else {
-          headIndex++
-        }
+        headIndex = rightArrow(headIndex)
         break
       case 'ArrowLeft':
-        if (headIndex <= 0) {
-          headIndex = 5
-        } else {
-          headIndex--
-        }
+        headIndex = leftArrow(headIndex)
         break
     }
     console.log(`headIndex: ${headIndex}`)
@@ -39,3 +31,21 @@ function changeClownBody() {}
 
 // change clown shoes
 function changeClownShoes() {}
+
+function rightArrow(index) {
+  if (index >= 5) {
+    index = 0
+  } else {
+    index++
+  }
+  return index
+}
+
+function leftArrow(index) {
+  if (index <= 0) {
+    index = 5
+  } else {
+    index--
+  }
+  return index
+}
