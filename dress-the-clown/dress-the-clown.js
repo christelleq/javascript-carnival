@@ -36,24 +36,41 @@ let clothingIndex = 0
 
 document.addEventListener('keydown', function (e) {
   switch (e.key) {
-    case 'ArrowUp':
+    case 'ArrowDown':
       if (clothingIndex >= 2) {
         clothingIndex = 0
       } else {
         clothingIndex++
       }
       console.log('clothingIndex: ', clothingIndex)
+      whichBodyPart(clothingIndex)
+
       break
-    case 'ArrowDown':
+    case 'ArrowUp':
       if (clothingIndex <= 0) {
         clothingIndex = 2
       } else {
         clothingIndex--
       }
       console.log('clothingIndex: ', clothingIndex)
+      whichBodyPart(clothingIndex)
       break
   }
 })
+
+let bodyPart
+
+function whichBodyPart(clothingIndex) {
+  if (clothingIndex == 0) {
+    bodyPart = 'head'
+  } else if (clothingIndex == 1) {
+    bodyPart = 'body'
+  } else if (clothingIndex == 2) {
+    bodyPart = 'shoes'
+  }
+  console.log('bodyPart', bodyPart)
+  return bodyPart
+}
 
 function rightArrow(index) {
   if (index >= 5) {
