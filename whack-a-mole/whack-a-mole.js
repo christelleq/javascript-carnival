@@ -28,6 +28,7 @@ function showMole(cellNumber) {
   cells[cellNumber].appendChild(image)
   console.log(cellNumber)
   cells[cellNumber].addEventListener('click', whackedMole)
+  cells[cellNumber].addEventListener('click', countWhacks)
 }
 
 showMole(whichCell())
@@ -43,4 +44,12 @@ function playSound() {
   let audio = new Audio()
   audio.src = './whack-audio.wav'
   audio.play()
+}
+
+let whackCount = 0
+
+function countWhacks() {
+  whackCount++
+  document.getElementById('whackCount').innerHTML = `Whack Count: ${whackCount}`
+  console.log(`whackCount: ${whackCount}`)
 }
