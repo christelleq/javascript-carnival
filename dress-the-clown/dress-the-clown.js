@@ -32,6 +32,29 @@ function changeClownBody() {}
 // change clown shoes
 function changeClownShoes() {}
 
+let clothingIndex = 0
+
+document.addEventListener('keydown', function (e) {
+  switch (e.key) {
+    case 'ArrowUp':
+      if (clothingIndex >= 2) {
+        clothingIndex = 0
+      } else {
+        clothingIndex++
+      }
+      console.log('clothingIndex: ', clothingIndex)
+      break
+    case 'ArrowDown':
+      if (clothingIndex <= 0) {
+        clothingIndex = 2
+      } else {
+        clothingIndex--
+      }
+      console.log('clothingIndex: ', clothingIndex)
+      break
+  }
+})
+
 function rightArrow(index) {
   if (index >= 5) {
     index = 0
