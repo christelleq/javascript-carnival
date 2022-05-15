@@ -6,6 +6,8 @@ console.log('Dress The Clown!')
 
 // change clown head
 
+let headIndex = 0
+
 function changeClownHead() {
   document.getElementById('head').src = './images/head1.png'
 }
