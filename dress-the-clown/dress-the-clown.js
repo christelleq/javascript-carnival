@@ -4,33 +4,33 @@
 
 console.log('Dress The Clown!')
 
-// change clown head
+// // change clown head
 
-let headIndex = 0
+// let headIndex = 0
 
-function changeClownHead() {
-  document.addEventListener('keydown', function (e) {
-    switch (e.key) {
-      case 'ArrowRight':
-        headIndex = rightArrow(headIndex)
-        break
-      case 'ArrowLeft':
-        headIndex = leftArrow(headIndex)
-        break
-    }
-    console.log(`headIndex: ${headIndex}`)
-    headImage = './images/head' + headIndex + '.png'
-    document.getElementById('head').src = headImage
-  })
-}
+// function changeClownHead() {
+//   document.addEventListener('keydown', function (e) {
+//     switch (e.key) {
+//       case 'ArrowRight':
+//         headIndex = rightArrow(headIndex)
+//         break
+//       case 'ArrowLeft':
+//         headIndex = leftArrow(headIndex)
+//         break
+//     }
+//     console.log(`headIndex: ${headIndex}`)
+//     headImage = './images/head' + headIndex + '.png'
+//     document.getElementById('head').src = headImage
+//   })
+// }
 
-changeClownHead()
+// changeClownHead()
 
-// change clown body
-function changeClownBody() {}
+// // change clown body
+// function changeClownBody() {}
 
-// change clown shoes
-function changeClownShoes() {}
+// // change clown shoes
+// function changeClownShoes() {}
 
 let clothingIndex = 0
 
@@ -44,7 +44,6 @@ document.addEventListener('keydown', function (e) {
       }
       console.log('clothingIndex: ', clothingIndex)
       whichBodyPart(clothingIndex)
-
       break
     case 'ArrowUp':
       if (clothingIndex <= 0) {
@@ -58,7 +57,7 @@ document.addEventListener('keydown', function (e) {
   }
 })
 
-let bodyPart
+let bodyPart = 'head'
 
 function whichBodyPart(clothingIndex) {
   if (clothingIndex == 0) {
@@ -71,6 +70,23 @@ function whichBodyPart(clothingIndex) {
   console.log('bodyPart', bodyPart)
   return bodyPart
 }
+
+let index = 0
+
+document.addEventListener('keydown', function changeClothes(e) {
+  switch (e.key) {
+    case 'ArrowRight':
+      index = rightArrow(index)
+      break
+    case 'ArrowLeft':
+      index = leftArrow(index)
+      break
+  }
+  console.log(`index: ${index}`)
+  image = './images/' + bodyPart + index + '.png'
+  console.log(image)
+  document.getElementById(bodyPart).src = image
+})
 
 function rightArrow(index) {
   if (index >= 5) {
