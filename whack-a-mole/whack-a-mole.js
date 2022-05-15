@@ -34,6 +34,13 @@ showMole(whichCell())
 
 function whackedMole() {
   console.log(cellNumber)
+  playSound()
   cells[cellNumber].innerHTML = ''
   showMole(whichCell())
+}
+
+function playSound() {
+  let audio = new Audio()
+  audio.src = './whack-audio.wav'
+  audio.play()
 }
