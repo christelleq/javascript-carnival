@@ -9,7 +9,8 @@ console.log('Dress The Clown!')
 let headIndex = 0
 
 function changeClownHead() {
-  document.getElementById('head').src = './images/head1.png'
+  headImage = './images/head' + headIndex + '.png'
+  document.getElementById('head').src = headImage
 }
 
 changeClownHead()
