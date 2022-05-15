@@ -6,7 +6,7 @@ console.log('Dress The Clown!')
 
 let clothingIndex = 0
 
-document.addEventListener('keydown', function (e) {
+document.addEventListener('keydown', function changeClothingIndex(e) {
   switch (e.key) {
     case 'ArrowDown':
       if (clothingIndex >= 2) {
