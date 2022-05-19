@@ -68,12 +68,28 @@ window.onload = function () {
 
 function setTimer() {
   setTimeout(scoreAlert, 10000)
+  setTimeout(setHighScore, 10000)
+  setTimeout(displayHighScore, 10000)
 }
 
 function scoreAlert() {
   alert(`Your score is ${whackCount}`)
 }
 
-// Add a `high score` field that stores your highest score and replaces it if a new, higher score is achieved. _*Note:_ for now, this score will be reset when you refresh your browser. For it to last, you would need some form of _database_, which we  cover later during bootcamp.
+// DONE! Add a `high score` field that stores your highest score and replaces it if a new, higher score is achieved. _*Note:_ for now, this score will be reset when you refresh your browser. For it to last, you would need some form of _database_, which we  cover later during bootcamp.
+
+highScore = whackCount
+
+function displayHighScore() {
+  document.getElementById('highScore').innerHTML = `High Score: ${highScore}`
+}
+
+function setHighScore() {
+  if (whackCount > highScore) {
+    highScore = whackCount
+  } else {
+    highScore = highScore
+  }
+}
 
 // Rewrite your `random index` function so it can't give you the same index twice in a row.
