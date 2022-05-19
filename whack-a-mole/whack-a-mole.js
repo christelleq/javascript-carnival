@@ -18,7 +18,7 @@ function whichCell() {
     randomIndex = Math.floor(Math.random() * 25)
   }
   cellNumber = randomIndex
-  console.log(cellNumber)
+  console.log(`cell number: ${cellNumber}`)
   return cellNumber
 }
 
@@ -30,15 +30,13 @@ function showMole(cellNumber) {
   image.setAttribute('height', 70)
   image.setAttribute('height', 70)
   cells[cellNumber].appendChild(image)
-  console.log(cellNumber)
   cells[cellNumber].addEventListener('click', whackedMole)
   cells[cellNumber].addEventListener('click', countWhacks)
 }
 
 showMole(whichCell())
 
-function whackedMole() {
-  console.log(cellNumber)
+function whackedMole(e) {
   playSound()
   cells[cellNumber].innerHTML = ''
   showMole(whichCell())
