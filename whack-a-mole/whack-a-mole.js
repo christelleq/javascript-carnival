@@ -56,7 +56,23 @@ function countWhacks() {
   console.log(`whackCount: ${whackCount}`)
 }
 
-// Add a `timer` to the page that gives you 10 seconds to whack as many moles as possible, and then pops up your score as a Javascript alert.
+// DONE! Add a `timer` to the page that gives you 10 seconds to whack as many moles as possible, and then pops up your score as a Javascript alert.
+
+window.onload = function () {
+  window.addEventListener(
+    'load',
+    setTimer(),
+    alert(`You have 10 seconds to whack as many moles as you can!`)
+  )
+}
+
+function setTimer() {
+  setTimeout(scoreAlert, 10000)
+}
+
+function scoreAlert() {
+  alert(`Your score is ${whackCount}`)
+}
 
 // Add a `high score` field that stores your highest score and replaces it if a new, higher score is achieved. _*Note:_ for now, this score will be reset when you refresh your browser. For it to last, you would need some form of _database_, which we  cover later during bootcamp.
 
