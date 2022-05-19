@@ -13,7 +13,11 @@ let cells = document.getElementsByTagName('td')
 let cellNumber
 
 function whichCell() {
-  cellNumber = Math.floor(Math.random() * 25)
+  randomIndex = Math.floor(Math.random() * 25)
+  while (cellNumber == randomIndex) {
+    randomIndex = Math.floor(Math.random() * 25)
+  }
+  cellNumber = randomIndex
   console.log(cellNumber)
   return cellNumber
 }
