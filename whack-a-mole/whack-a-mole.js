@@ -54,8 +54,12 @@ let whackCount = 0
 
 function countWhacks() {
   whackCount++
-  document.getElementById('whackCount').innerHTML = `Whack Count: ${whackCount}`
+  displayWhackCount()
   console.log(`whackCount: ${whackCount}`)
+}
+
+function displayWhackCount() {
+  document.getElementById('whackCount').innerHTML = `Whack Count: ${whackCount}`
 }
 
 // DONE! Add a `timer` to the page that gives you 10 seconds to whack as many moles as possible, and then pops up your score as a Javascript alert.
@@ -73,15 +77,34 @@ function setTimer() {
   setTimeout(scoreAlert, 10000)
   setTimeout(setHighScore, 10000)
   setTimeout(displayHighScore, 10000)
+  setTimeout(createPlayAgainButton, 10000)
 }
 
 function scoreAlert() {
   alert(`Your score is ${whackCount}`)
 }
 
-// we want the game to restart when the timer is up
-// we want the score to reset
-// we could add a button to 'play again'
+function createPlayAgainButton() {
+  if (document.getElementById('playAgainButton').innerHTML == '') {
+    const button = document.createElement('button')
+    button.setAttribute('height', 70)
+    button.setAttribute('width', 70)
+    document.getElementById('playAgainButton').appendChild(button)
+    button.innerHTML = 'Play Again'
+    button.addEventListener('click', playAgain)
+  }
+}
+
+function playAgain() {
+  whackCount = 0
+  displayWhackCount()
+  alert(`You have 10 seconds to whack as many moles as you can!`)
+  setTimer()
+}
+
+// DONE! we want the game to restart when the timer is up
+// DONE! we want the score to reset
+// DONE! we could add a button to 'play again'
 
 // DONE! Add a `high score` field that stores your highest score and replaces it if a new, higher score is achieved. _*Note:_ for now, this score will be reset when you refresh your browser. For it to last, you would need some form of _database_, which we  cover later during bootcamp.
 
