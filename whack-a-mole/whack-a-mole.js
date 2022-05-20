@@ -63,10 +63,11 @@ function countWhacks() {
 window.onload = function () {
   window.addEventListener(
     'load',
-    setTimer(),
     alert(`You have 10 seconds to whack as many moles as you can!`)
   )
 }
+
+setTimer()
 
 function setTimer() {
   setTimeout(scoreAlert, 10000)
