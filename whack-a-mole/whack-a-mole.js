@@ -81,7 +81,7 @@ function setTimer() {
 }
 
 function scoreAlert() {
-  alert(`Your score is ${whackCount}`)
+  alert(`Your score is ${whackCount}.`)
 }
 
 function createPlayAgainButton() {
@@ -117,6 +117,9 @@ function displayHighScore() {
 function setHighScore() {
   if (whackCount > highScore) {
     highScore = whackCount
+    if (document.getElementById('playAgainButton').innerHTML !== '') {
+      alert(`Great job! You have a new high score of ${highScore}!`)
+    }
   } else {
     highScore = highScore
   }
