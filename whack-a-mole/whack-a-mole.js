@@ -28,7 +28,7 @@ function showMole(cellNumber) {
   image.setAttribute('src', './mole.png')
   image.setAttribute('id', 'mole')
   image.setAttribute('height', 70)
-  image.setAttribute('height', 70)
+  image.setAttribute('width', 70)
   cells[cellNumber].appendChild(image)
   cells[cellNumber].addEventListener('click', whackedMole)
   cells[cellNumber].addEventListener('click', countWhacks)
@@ -78,6 +78,10 @@ function scoreAlert() {
   alert(`Your score is ${whackCount}`)
 }
 
+// we want the game to restart when the timer is up
+// we want the score to reset
+// we could add a button to 'play again'
+
 // DONE! Add a `high score` field that stores your highest score and replaces it if a new, higher score is achieved. _*Note:_ for now, this score will be reset when you refresh your browser. For it to last, you would need some form of _database_, which we  cover later during bootcamp.
 
 highScore = whackCount
@@ -94,4 +98,4 @@ function setHighScore() {
   }
 }
 
-// Rewrite your `random index` function so it can't give you the same index twice in a row.
+// DONE! Rewrite your `random index` function so it can't give you the same index twice in a row.
